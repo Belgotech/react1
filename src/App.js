@@ -10,11 +10,15 @@ function App() {
     setCount(count + 1)
   }
 
+  useEffect(()=>{
+    document.title=`${count} new message!`
+  })
+
   return (
     <div className="App">
       <header className="App-header">
         <h3>
-          {count}
+          {count} new message
         </h3>
         <button onClick={handleCount}>
           click to add {count}
