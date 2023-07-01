@@ -28,6 +28,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div>
+          {products.map((product, index)=>{
+            <h3 key={index}>
+              {product.title} - ${product.price}
+            </h3>
+          })}
+        </div>
         <h3>
           {count} new message
         </h3>
