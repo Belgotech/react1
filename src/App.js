@@ -16,7 +16,7 @@ function App() {
 
   useEffect(()=>{
     document.title=`${count} new message and ${count2} calls!`
-  },)
+  },[handleCount])
 
   return (
     <div className="App">
