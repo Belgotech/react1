@@ -14,9 +14,16 @@ function App() {
     setCount2(count2 + 1)
   }
 
-  useEffect(()=>{
-    document.title=`${count} new message and ${count2} calls!`
-  },[handleCount])
+  useEffect(() => {
+    const [products, setProducts] = useState([])
+    axios
+      .get('https://dummyjason.com/products')
+      .then((response) => { setProducts(response.data.products) })
+  }, [])
+
+  useEffect(() => {
+    document.title = `${count} new message and ${count2} calls!`
+  }, [handleCount])
 
   return (
     <div className="App">
