@@ -45,7 +45,7 @@ function App() {
         <div>
           {error !== "" && error}
           {products.map((product, index)=>{
-            <h3 key={index}>
+            return<h3 key={index}>
               {product.title} - ${product.price}
             </h3>
           })}
