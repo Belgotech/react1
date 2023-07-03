@@ -6,6 +6,7 @@ function App() {
 
   const [count, setCount] = useState(0)
   const [count2, setCount2] = useState(0)
+  const [products, setProducts] = useState([])
 
   const handleCount = () => {
     setCount(count + 1)
@@ -15,7 +16,7 @@ function App() {
   }
 
   useEffect(() => {
-    const [products, setProducts] = useState([])
+    
     axios
       .get('https://dummyjason.com/products')
       .then((response) => { setProducts(response.data.products) })
