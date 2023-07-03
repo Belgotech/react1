@@ -19,6 +19,7 @@ function App() {
     axios
       .get('https://dummyjason.com/products')
       .then((response) => { setProducts(response.data.products) })
+      .catch((error)=>console.log(error))
   }, [])
 
   useEffect(() => {
