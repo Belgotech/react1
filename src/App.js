@@ -19,10 +19,10 @@ function App() {
 
   useEffect(() => {
     getProduct()
-    axios
-      .get('/products')
-      .then((response) => { setProducts(response.data.products) })
-      .catch((error)=> setError(error.message))
+    // axios
+    //   .get('/products')
+    //   .then((response) => { setProducts(response.data.products) })
+    //   .catch((error)=> setError(error.message))
   }, [])
 
   async function getProduct (){
