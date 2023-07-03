@@ -18,26 +18,26 @@ function App() {
   }
 
   useEffect(() => {
-    // getProduct()
-    axios
-      .get('/products')
-      .then((response) => { setProducts(response.data.products) })
-      .catch((error)=> setError(error.message))
+    getProduct()
+    // axios
+    //   .get('/products')
+    //   .then((response) => { setProducts(response.data.products) })
+    //   .catch((error)=> setError(error.message))
   }, [])
 
-  // async function getProduct (){
-  //   try{
-  //   const response = await axios.get("/product")
-  //   console.log(response)
-  //   setProducts(response.data.products)
-  // } catch (error){
-  //   setError(error.message)
-  // }
-  // }
+  async function getProduct (){
+    try{
+    const response = await axios.get("/product")
+    console.log(response)
+    setProducts(response.data.products)
+  } catch (error){
+    setError(error.message)
+  }
+  }
 
   useEffect(() => {
     document.title = `${count} new message and ${count2} calls!`
-  }, [count, count2])
+  }, [ count, count2])
 
   return (
     <div className="App">
