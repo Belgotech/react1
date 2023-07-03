@@ -7,6 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [count2, setCount2] = useState(0)
   const [products, setProducts] = useState([])
+  const [error, setError] = useState([])
 
   const handleCount = () => {
     setCount(count + 1)
@@ -20,7 +21,7 @@ function App() {
     axios
       .get('https://dummyjason.com/products')
       .then((response) => { setProducts(response.data.products) })
-      .catch((error)=>console.log(error))
+      .catch((error)=> setError(error.message))
   }, [])
 
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          {error !== "" && error}
           {products.map((product, index)=>{
             <h3 key={index}>
               {product.title} - ${product.price}
