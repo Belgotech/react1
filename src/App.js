@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from "react";
+import axios from "./axios"
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
   useEffect(() => {
     
     axios
-      .get('https://dummyjason.com/products')
+      .get('/products')
       .then((response) => { setProducts(response.data.products) })
       .catch((error)=> setError(error.message))
   }, [])
