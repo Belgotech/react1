@@ -2,6 +2,7 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import axios from "./axios"
+import photoGallery from "./fef";
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <photoGallery />
         <div>
           {error !== "" && error}
           {products.map((product, index)=>{
