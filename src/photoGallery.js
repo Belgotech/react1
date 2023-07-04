@@ -14,6 +14,7 @@ function PhotoGallery() {
       } catch (error) {
         setErrors(error.message)
       }
+      return
 
     };
 
