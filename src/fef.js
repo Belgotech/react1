@@ -1,8 +1,9 @@
-import axios from './axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 function PhotoGallery() {
   const [photos, setPhotos] = useState([]);
+  const [error, setErrors] = useState([])
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -16,11 +17,11 @@ function PhotoGallery() {
       // }
 
       try{
-        const response = await axios.get("/product")
+        const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
         console.log(response)
-        setPhotos(response.data.products)
+        setPhotos(response.data)
       } catch (error){
-        console.log(error)
+        setErrors(error.message)
       }
 
     };
@@ -60,6 +61,7 @@ function PhotoGallery() {
 
   return (
     <div>
+      {error !== "" && error}
       {filterPhotos().map(photo => (
         <img
           key={photo.id}
