@@ -2,7 +2,7 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import axios from "./axios"
-import PhotoGallery from "./fef";
+import PhotoGallery from "./photoGallery";
 
 function App() {
 
