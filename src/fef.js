@@ -7,20 +7,11 @@ function PhotoGallery() {
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      // try {
-      //   // const response = await fetch('https://jsonplaceholder.typicode.com/photos');
-      //   const response = await axios.get('/products');
-      //   // const data = await response.json();
-      //   setPhotos(data);
-      // } catch (error) {
-      //   console.error('Error:', error);
-      // }
-
-      try{
+      try {
         const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
         console.log(response)
         setPhotos(response.data)
-      } catch (error){
+      } catch (error) {
         setErrors(error.message)
       }
 
