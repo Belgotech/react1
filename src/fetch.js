@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const FetchComponent = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +22,7 @@ const FetchComponent = () => {
         const json = await response.json();
         setData(json);
       } catch (error) {
-        console.error(error);
+        setError(error.message);
         // Handle error here
       }
     };
@@ -32,8 +33,11 @@ const FetchComponent = () => {
   return (
     <div>
       {/* Render the data or an error message */}
-      {data ? <p>Data: {JSON.stringify(data)}</p> : <p>Loading...</p>}
-      {}
+      {/* {data ? <p>Data: {JSON.stringify(data)}</p> : <p>Loading...</p>} */}
+      {error !== "" && error}
+      {JSON.stringify(data.map((product, index)=>{
+        return <h3 key={index}>{product.title} - ${product.price}</h3>
+      }))}
     </div>
   );
 };
