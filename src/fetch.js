@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const SomeComponent = () => {
+const FetchComponent = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const SomeComponent = () => {
   );
 };
 
-export default SomeComponent;
+export default FetchComponent;
