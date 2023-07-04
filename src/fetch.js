@@ -11,7 +11,7 @@ const FetchComponent = () => {
           controller.abort(); // Abort the fetch request after 20 seconds
         }, 20000);
 
-        const response = await fetch('someurl', { signal: controller.signal });
+        const response = await fetch('https://dummyjson.com/product', { signal: controller.signal });
         clearTimeout(timeout);
 
         if (!response.ok) {
@@ -33,6 +33,7 @@ const FetchComponent = () => {
     <div>
       {/* Render the data or an error message */}
       {data ? <p>Data: {JSON.stringify(data)}</p> : <p>Loading...</p>}
+      {}
     </div>
   );
 };

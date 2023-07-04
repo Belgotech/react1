@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useEffect } from "react";
 import axios from "./axios"
 import PhotoGallery from "./photoGallery";
+import FetchComponent from "./fetch";
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <FetchComponent />
         <PhotoGallery />
         <div>
           {error !== "" && error}
