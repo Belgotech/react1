@@ -15,6 +15,7 @@ function App() {
   const handleCount = () => {
     setCount(count + 1)
   }
+  
   const handleCount2 = () => {
     setCount2(count2 + 1)
   }
